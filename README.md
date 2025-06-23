@@ -2,9 +2,9 @@
 
 ![Banner](https://github.com/user-attachments/assets/5b933a56-0ece-452a-99c0-1a641485a6b9)
 
-# **{{ repo-name }}**
+# **Bubbles**
 
-_**{{ repo-description }}**_
+_**Sistema de burbujas animadas empaquetadas en una flipbook sheet desde Houdini mediante VFX Toolbox. Ideal para simular efectos de burbujeo continuo en líquidos o ambientes submarinos.**_
 
 
 </header>
