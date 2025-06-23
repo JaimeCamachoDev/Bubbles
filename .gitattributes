@@ -1,42 +1,35 @@
 # ===============================================================
-# Git Attributes para Unity en entorno Windows + GitHub
-# JaimeCamachoDev - Reforzado por compatibilidad CRLF/LF
+# .gitattributes para proyectos Unity (Windows, GitHub, multiplataforma)
+# JaimeCamachoDev - Previene errores de saltos de línea y conflictos CRLF/LF
 # ===============================================================
 
-# Forzar a LF para consistencia en repositorios remotos
-# y evitar cambios molestos entre editores o SO
+# Normalizar todos los archivos de texto a LF (estándar GitHub)
 * text=auto eol=lf
 
-# ====================
-# Archivos de Unity
-# ====================
-*.cs           text diff=csharp
-*.shader       text
-*.cginc        text
-*.hlsl         text
-*.compute      text
-*.uxml         text
-*.uss          text
-*.asmdef       text
-*.json         text
-*.xml          text
-*.yml          text
-*.yaml         text
-*.txt          text
-*.md           text
+# Forzar eol=lf explícitamente en archivos relevantes
+*.cs           text eol=lf diff=csharp
+*.shader       text eol=lf
+*.cginc        text eol=lf
+*.hlsl         text eol=lf
+*.compute      text eol=lf
+*.uxml         text eol=lf
+*.uss          text eol=lf
+*.asmdef       text eol=lf
+*.json         text eol=lf
+*.xml          text eol=lf
+*.yml          text eol=lf
+*.yaml         text eol=lf
+*.txt          text eol=lf
+*.md           text eol=lf
+*.meta         text eol=lf
 
-# Archivos Unity .meta
-*.meta         text
+# Archivos específicos de Unity
+ProjectSettings/**      text eol=lf
+Assets/**/*.unity       text eol=lf
+Assets/**/*.prefab      text eol=lf
+Assets/**/*.asset       text eol=lf
 
-# Archivos de proyecto Unity
-ProjectSettings/**  text
-Assets/**/*.unity   text
-Assets/**/*.prefab  text
-Assets/**/*.asset   text
-
-# ====================
-# Binary files
-# ====================
+# Archivos binarios (sin conversión de texto)
 *.png          binary
 *.jpg          binary
 *.jpeg         binary
@@ -54,20 +47,5 @@ Assets/**/*.asset   text
 *.mat          binary
 *.cubemap      binary
 
-# ====================
-# Evitar reescritura forzada por autocrlf local
-# ====================
-# Esto ignora la conversión local de CRLF → LF si ya lo controla Git
-*.cs     text eol=lf
-*.shader text eol=lf
-*.meta   text eol=lf
-*.json   text eol=lf
-
-# ====================
-# Opcional: Unity-generated lock files (evita conflictos de merge)
-# ====================
+# Archivos .lock con merge más flexible
 *.lock merge=union
-
-# ====================
-# End of file
-# ====================
