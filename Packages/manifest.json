@@ -4,8 +4,7 @@
     "com.unity.vfx-toolbox": "https://github.com/Unity-Technologies/VFXToolbox.git",
     "jp.keijiro.klutter-tools": "2.1.0",
     "com.unity.modules.animation": "1.0.0",
-    "com.unity.modules.particlesystem": "1.0.0",
-    "@JaimeCamachoDev/bubbles": "1.0.0"
+    "com.unity.modules.particlesystem": "1.0.0"
   },
   "scopedRegistries": [
     {
@@ -14,14 +13,6 @@
       "scopes": [
         "jp.keijiro"
       ]
-    },
-    {
-      "name": "GitHub",
-      "url": "https://npm.pkg.github.com",
-      "scopes": [
-        "JaimeCamachoDev"
-      ],
-      "overrideBuiltIns": false
     }
   ]
 }
