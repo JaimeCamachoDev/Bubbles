@@ -8,6 +8,10 @@ _**Sistema de burbujas animadas empaquetadas en una flipbook sheet desde Houdini
 
 
 </header>
+
+## Configuracion de npm
+Copia `.npmrc.example` a `.npmrc` y proporciona un `NODE_AUTH_TOKEN` o token personal para acceder a los paquetes privados.
+
    
 <footer>
    
