@@ -13,6 +13,14 @@
       "scopes": [
         "jp.keijiro"
       ]
+    },
+    {
+      "name": "Jaime Camacho DEV",
+      "url": "https://github.com/JaimeCamachoDev/Bubbles.git",
+      "scopes": [
+        "Jaime Camacho DEV"
+      ],
+      "overrideBuiltIns": false
     }
   ]
 }

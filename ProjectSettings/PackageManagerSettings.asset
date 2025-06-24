@@ -35,11 +35,19 @@ MonoBehaviour:
     m_IsDefault: 0
     m_Capabilities: 0
     m_ConfigSource: 4
-  m_UserSelectedRegistryName: Keijiro
+  - m_Id: scoped:project:Jaime Camacho DEV
+    m_Name: Jaime Camacho DEV
+    m_Url: https://github.com/JaimeCamachoDev/Bubbles.git
+    m_Scopes:
+    - Jaime Camacho DEV
+    m_IsDefault: 0
+    m_Capabilities: 0
+    m_ConfigSource: 4
+  m_UserSelectedRegistryName: Jaime Camacho DEV
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_Modified: 0
     m_ErrorMessage: 
-    m_UserModificationsInstanceId: -850
-    m_OriginalInstanceId: -852
+    m_UserModificationsInstanceId: -890
+    m_OriginalInstanceId: -894
   m_LoadAssets: 0
