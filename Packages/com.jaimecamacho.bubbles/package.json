@@ -1,17 +1,22 @@
 {
   "name": "com.jaimecamacho.bubbles",
-  "displayName": "Bubbles",
   "version": "1.0.0",
-  "unity": "2021.3",
-  "description": "Sistema de burbujas modular para Unity",
-  "keywords": ["bubble", "vfx", "particles"],
+  "displayName": "Bubbles",
+  "description": "Sistema de burbujas modular para Unity 6.",
+  "unity": "6000.0",
+  "unityRelease": "42f1",
+  "keywords": [
+    "bubbles",
+    "vfx",
+    "unity",
+    "particles",
+    "modular"
+  ],
   "category": "Effects",
   "author": {
     "name": "Jaime Camacho",
-    "url": "https://github.com/JaimeCamachoDev"
+    "email": "tu@email.com",
+    "url": "https://github.com/tuusuario"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JaimeCamachoDev/Bubbles.git"
-  }
+  "dependencies": {}
 }
