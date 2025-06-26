@@ -11,9 +11,4 @@ _**Sistema de burbujas animadas empaquetadas en una flipbook sheet desde Houdini
 
 <footer>
    
-
-### 📸 Social Preview
-- [ ] Sube una imagen `preview.png` personalizada en `Settings → Social Preview`.
-
-
 </footer>
