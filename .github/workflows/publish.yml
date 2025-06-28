@@ -35,15 +35,7 @@ jobs:
         run: |
           jq --arg v "$VERSION" '.version = $v' "$PACKAGE_DIR/package.json" > tmp.json && mv tmp.json "$PACKAGE_DIR/package.json"
 
-      - name: Commit and push updated package.json
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add "$PACKAGE_DIR/package.json"
-          git commit -m "🔖 Sync version to $VERSION from tag"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Paso de commit y push eliminado
 
       - name: Sync README into package
         run: |
