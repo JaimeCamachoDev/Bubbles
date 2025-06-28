@@ -27,6 +27,12 @@ jobs:
           mkdir -p "$PACKAGE_DIR"
           cp README.md "$PACKAGE_DIR/README.md"
 
+      - name: Sync version from tag into package.json
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "🔢 Versión extraída del tag: $VERSION"
+          jq --arg v "$VERSION" '.version = $v' "$PACKAGE_DIR/package.json" > tmp.json && mv tmp.json "$PACKAGE_DIR/package.json"
+
       - name: Publish package
         run: npm publish
         working-directory: ${{ env.PACKAGE_DIR }}
