@@ -1,6 +1,6 @@
 ![Movie_005](https://github.com/user-attachments/assets/4cf4d319-bd3d-4bea-8084-b4b8b01682d8)
 
-# Bubbles
+# Bubbles.
 
 Sistema de burbujas animadas empaquetadas en una *flipbook sheet* generada en
 Houdini mediante **VFX Toolbox**. Ideal para simular burbujeo continuo en
