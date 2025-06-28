@@ -2,13 +2,18 @@ name: Publish to npmjs
 
 on:
   release:
-    types: [created]  # Se ejecutará cuando hagas un release en GitHub
+    types: [created]
+
+permissions:
+  contents: write  # Requerido para poder hacer commit
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -22,18 +27,30 @@ jobs:
           repo_lower=$(echo "$repo_name" | tr '[:upper:]' '[:lower:]')
           echo "PACKAGE_DIR=Packages/com.jaimecamacho.$repo_lower" >> $GITHUB_ENV
 
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Update version in package.json
+        run: |
+          jq --arg v "$VERSION" '.version = $v' "$PACKAGE_DIR/package.json" > tmp.json && mv tmp.json "$PACKAGE_DIR/package.json"
+
+      - name: Commit and push updated package.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add "$PACKAGE_DIR/package.json"
+          git commit -m "🔖 Sync version to $VERSION from tag"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Sync README into package
         run: |
           mkdir -p "$PACKAGE_DIR"
           cp README.md "$PACKAGE_DIR/README.md"
 
-      - name: Sync version from tag into package.json
-        run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          echo "🔢 Versión extraída del tag: $VERSION"
-          jq --arg v "$VERSION" '.version = $v' "$PACKAGE_DIR/package.json" > tmp.json && mv tmp.json "$PACKAGE_DIR/package.json"
-
-      - name: Publish package
+      - name: Publish package to npm
         run: npm publish
         working-directory: ${{ env.PACKAGE_DIR }}
         env:
