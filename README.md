@@ -42,6 +42,10 @@ material o *prefab*, cópialo a tu proyecto antes de editarlo.
 
 ## Uso básico
 
+El nombre del repositorio sera el mismo que el del package todo en minusculas 
+hay que cambiar el numero de la version a mano
+
+
 ```csharp
 var emitter = gameObject.AddComponent<BubbleEmitter>();
 emitter.Emit();
