@@ -1,15 +1,33 @@
 # Bubbles
 
-**Bubbles** es un sistema modular de partículas tipo burbuja para Unity 6.  
-Diseñado para integrarse fácilmente como paquete y usarse en múltiples proyectos.
+**Bubbles** es un sistema modular de partículas tipo burbuja para Unity. Se
+diseñó para integrarse como paquete y reutilizarse en distintos proyectos.
 
-## 📦 Instalación
+## 📦 Instalación desde GitHub Packages
 
-Agrega esto a tu `manifest.json`:
+1. Copia `.npmrc.example` a `.npmrc` y añade tu `NODE_AUTH_TOKEN` personal para
+   poder acceder al registro privado.
+2. En `Packages/manifest.json` declara la registry y la dependencia:
 
 ```json
-"com.jaimecamacho.bubbles": "https://github.com/JaimeCamachoDev/Bubbles.git?path=/Packages/com.jaimecamacho.bubbles#v1.0.0"
+{
+  "scopedRegistries": [
+    {
+      "name": "GitHub",
+      "url": "https://npm.pkg.github.com",
+      "scopes": [
+        "JaimeCamachoDev"
+      ]
+    }
+  ],
+  "dependencies": {
+    "@JaimeCamachoDev/bubbles": "1.0.0"
+  }
+}
 ```
+
+Al reiniciar Unity, el Package Manager descargará la versión indicada desde
+GitHub.
 
 ## ✨ Uso básico
 
@@ -20,6 +38,6 @@ emitter.Emit();
 
 ## 📂 Carpetas
 
-- `Runtime`: scripts que se usan en el juego
-- `Editor`: extensiones del editor (inspector, menú, etc)
-- `Documentation~`: documentación visible en el Package Manager
+- `Runtime`: scripts de tiempo de ejecución
+- `Editor`: utilidades para el Editor
+- `Documentation~`: documentación mostrada en el Package Manager
