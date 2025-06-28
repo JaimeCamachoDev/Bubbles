@@ -22,8 +22,10 @@ jobs:
           repo_lower=$(echo "$repo_name" | tr '[:upper:]' '[:lower:]')
           echo "PACKAGE_DIR=Packages/com.jaimecamacho.$repo_lower" >> $GITHUB_ENV
 
-      - name: Sync README
-        run: cp README.md "$PACKAGE_DIR/README.md"
+      - name: Sync README into package
+        run: |
+          mkdir -p "$PACKAGE_DIR"
+          cp README.md "$PACKAGE_DIR/README.md"
 
       - name: Publish package
         run: npm publish
